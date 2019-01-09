@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>firebase-test</title>
+</head>
+<body>
+	<h1 id="bigOne"></h1>
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDZMlceBBBVgLCs2kwIJTnXL5AUs-eJapc",
+    authDomain: "chrome-8f6f0.firebaseapp.com",
+    databaseURL: "https://chrome-8f6f0.firebaseio.com",
+    projectId: "chrome-8f6f0",
+    storageBucket: "chrome-8f6f0.appspot.com",
+    messagingSenderId: "240785256702"
+  };
+  firebase.initializeApp(config);
+
+  var bigOne=document.getElementById("bigOne");
+  var dbRef=firebase.database().ref().child('text');
+  dbRef.on('value',snap=>bigOne.innerText=sanp.value());
+</script>
+
+</body>
+</html>
